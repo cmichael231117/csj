@@ -1,0 +1,21 @@
+#!/bin/bash
+
+name='csj'
+
+# Change directory saving current directory without Stdout
+pushd "$HOME/$name" > /dev/null
+
+# Pull from remote
+git pull
+
+# Add all changes
+git add .
+
+# Commit
+git commit -m "update: auto"
+
+# Push
+git push
+
+# Restore working directory
+popd > /dev/null
